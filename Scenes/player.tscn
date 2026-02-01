@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://yy8viedx1npa"]
+
+[ext_resource type="Script" uid="uid://28vun0lg1lep" path="res://Scripts/player.gd" id="1_6t5aa"]
+[ext_resource type="PackedScene" uid="uid://dmyu8fpg35j78" path="res://Scenes/wheel.tscn" id="1_cvnsp"]
+[ext_resource type="Texture2D" uid="uid://x1ls4tuc0mxr" path="res://Assets/Images/Car/RedCar.png" id="1_v0iea"]
+
+[node name="Player" type="RigidBody2D" unique_id=297708829 groups=["player"]]
+gravity_scale = 3.925
+script = ExtResource("1_6t5aa")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="." unique_id=1705989793]
+position = Vector2(-150, 95)
+node_a = NodePath("..")
+node_b = NodePath("Wheel")
+softness = 2.45
+
+[node name="Wheel" parent="PinJoint2D" unique_id=1871885882 instance=ExtResource("1_cvnsp")]
+position = Vector2(-2, 1)
+
+[node name="PinJoint2D2" type="PinJoint2D" parent="." unique_id=723246015]
+position = Vector2(112, 97)
+node_a = NodePath("..")
+node_b = NodePath("Wheel")
+softness = 2.45
+
+[node name="Wheel" parent="PinJoint2D2" unique_id=248765284 instance=ExtResource("1_cvnsp")]
+position = Vector2(0, -1)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=798228913]
+texture = ExtResource("1_v0iea")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=259464125]
+polygon = PackedVector2Array(-223, -54, -225, 93, 210, 92, 209, -5, 156, -29, 79, -52, -3, -60)
+
+[connection signal="body_shape_entered" from="PinJoint2D2/Wheel" to="." method="_on_wheel_body_shape_entered"]

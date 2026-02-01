@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://q1oi4esofek8"]
+
+[ext_resource type="PackedScene" uid="uid://yy8viedx1npa" path="res://Scenes/player.tscn" id="1_vk57k"]
+
+[node name="level1" type="Node2D" unique_id=665895403]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=614054044]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=351422978]
+polygon = PackedVector2Array(-1564, -13, -1430, -344, -1241, -502, -957, -557, -776, -336, -681, -163, -587, -13, -453, 152, -224, 255, 115, 310, 382, 271, 847, 176, 1123, 192, 1596, 192, 1903, 168, 2211, 97, 2471, 66, 2904, -21, 3266, -352, 3590, -462, 3889, -376, 4054, -147, 4291, 160, 4551, 365, 4969, 491, 5221, 452, 5591, 121, 6052, -12, 6462, -4, 6801, 12, 7076, 91, 7289, 375, 7319, 379, 7486, 477, 7752, 574, 8087, 546, 8296, 435, 8659, 142, 8729, 1859, -1677, 1783)
+
+[node name="Player" parent="." unique_id=297708829 instance=ExtResource("1_vk57k")]
+position = Vector2(46, -474)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=92556864]
+position = Vector2(-36, -36)

@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dmyu8fpg35j78"]
+
+[ext_resource type="Texture2D" uid="uid://chxq1hwmiacwn" path="res://Assets/Images/Car/Wheel.png" id="1_y7iat"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_u5up5"]
+radius = 63.007935
+
+[node name="Wheel" type="RigidBody2D" unique_id=1871885882]
+gravity_scale = 4.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1182867969]
+texture = ExtResource("1_y7iat")
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="." unique_id=133405817]
+shape = SubResource("CircleShape2D_u5up5")
